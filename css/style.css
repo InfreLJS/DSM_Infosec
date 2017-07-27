@@ -1,0 +1,612 @@
+    /* 스크롤바 없애기 */
+
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    /* 공통 */
+
+    html,
+    body,
+    article {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        font-family: "NanumGothic";
+        background-color: rgb(20, 20, 20);
+    }
+
+    body.modal-opened {
+        overflow: hidden;
+    }
+
+    strong {
+        font-family: "NanumGothicB";
+    }
+
+    .match_parent {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+    }
+
+    .modal {
+        color: rgb(220, 220, 220);
+    }
+
+    .modal-content {
+        background-color: rgb(40, 40, 40);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+    }
+
+    .text-vertical-center {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .text-vertical-center h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 70px;
+        font-weight: 700;
+    }
+
+    .list-btn-group {
+        float: right;
+        margin-bottom: 50px;
+    }
+
+    .list-group>.list-group-item,
+    .list-group>.list-group-item:focus {
+        background-color: rgb(30, 30, 30);
+        color: rgb(255, 255, 255);
+    }
+
+    .list-group>.list-group-item-info {
+        background-color: rgb(30, 30, 30);
+        color: rgb(100, 220, 255);
+    }
+
+    .list-group>.list-group-item-danger {
+        background-color: rgb(30, 30, 30);
+        color: rgb(255, 180, 180);
+    }
+
+    .list-group>a.list-group-item:hover {
+        background-color: rgb(40, 40, 40);
+        color: rgb(255, 255, 255);
+    }
+
+    .header-refresh,
+    .header-refresh:focus {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    .header-refresh:hover {
+        color: rgb(180, 180, 180);
+        text-decoration: none;
+    }
+    /* 버튼 */
+
+    .btn {
+        margin-top: -4px;
+    }
+
+    .btn-dark {
+        border: 0px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .btn-dark:hover,
+    .btn-dark:focus,
+    .btn-dark:active {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-light {
+        color: rgba(50, 50, 50, 1);
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-light:hover,
+    .btn-light:focus,
+    .btn-light:active {
+        color: rgba(50, 50, 50, 1);
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    /* 수평선 길이 */
+
+    hr.small {
+        max-width: 100px;
+    }
+    /* Header */
+
+    .header {
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(20, 20, 20);
+    }
+
+    .header h1,
+    .header h3 {
+        color: rgba(255, 255, 255, 1);
+        text-shadow: 0 0 2px black;
+        -moz-text-shadow: 0 0 2px black;
+        -webkit-text-shadow: 0 0 2px black;
+    }
+    /* Introduce */
+
+    .title-small {
+        font-size: 16px;
+        font-family: "NanumGothicB";
+        border-bottom: 1px solid rgb(150, 150, 150);
+        display: inline-block;
+        padding-bottom: 4px;
+        margin-bottom: 20px;
+        color: rgb(255, 255, 255);
+    }
+
+    .text-small {
+        font-size: 16px;
+        color: rgb(200, 200, 200);
+        margin-bottom: 10px;
+    }
+
+    .text-small a {
+        text-decoration: none;
+        color: rgb(200, 200, 200);
+    }
+
+    .text-small a:hover {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+
+    .introduce {
+        position: relative;
+        background-color: rgb(20, 20, 20);
+    }
+
+    .introduce-text {
+        margin-top: 100px;
+        z-index: 2;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        -ms-transition: all 1s ease 0s;
+        -o-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+    }
+
+    .introduce-text h2 {
+        font-size: 43px;
+        margin-bottom: 30px;
+        color: rgb(255, 255, 255);
+    }
+
+    .introduce-text>div {
+        padding: 30px 100px;
+    }
+
+    .background-image {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 1;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        -ms-transition: all 1s ease 0s;
+        -o-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+    }
+
+    .about-text-hidden {
+        opacity: 0;
+    }
+
+    .about-text-show {
+        opacity: 1;
+    }
+
+    .background-hidden {
+        left: -150px;
+        opacity: 0;
+    }
+
+    .background-show {
+        left: 0px;
+        opacity: 0.3;
+    }
+    /* Work */
+
+    .work {
+        position: relative;
+        background-color: rgb(20, 20, 20);
+    }
+    /* Members */
+
+    .members {
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        background-color: rgb(40, 40, 40);
+    }
+
+    .members hr {
+        margin-bottom: 60px;
+    }
+
+    .member {
+        margin-bottom: 30px;
+    }
+
+    .member:hover {
+        color: rgb(200, 200, 200);
+    }
+    /* Contact */
+
+    .contact {
+        display: table;
+        position: relative;
+        width: 100%;
+        height: 75%;
+        background-color: rgb(20, 20, 20);
+        margin-bottom: 40px;
+    }
+
+    .contact iframe {
+        padding-top: 50px;
+        pointer-events: none;
+    }
+    /* Footer */
+
+    footer {
+        padding-bottom: 20px;
+        color: rgb(200, 200, 200);
+        background-color: rgb(20, 20, 20);
+    }
+    /* 네비게이션 */
+
+    .navbar-toggle {
+        border-radius: 2px;
+        background-color: rgb(100, 220, 255);
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: white;
+    }
+
+    .navbar-default {
+        background-color: rgb(50, 50, 50);
+        border: 0px;
+    }
+
+    .navbar-brand {
+        padding: 0px;
+    }
+
+    .navbar-brand img {
+        width: 90px;
+        height: 45px;
+        margin: 3px 13px 2px 13px;
+    }
+
+    .navbar-right {
+        margin-right: 5px;
+    }
+
+    .navbar-default .navbar-nav>li>a,
+    .navbar-default .navbar-nav>li>a:focus {
+        font-size: 13px;
+        color: rgb(255, 255, 255);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover {
+        color: rgb(170, 170, 170);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+        color: rgb(100, 220, 255);
+        background-color: rgb(50, 50, 50);
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+    }
+
+    .navbar-default .navbar-nav>.open>a,
+    .navbar-default .navbar-nav>.open>a:hover,
+    .navbar-default .navbar-nav>.open>a:focus {
+        color: rgb(100, 220, 255);
+        background-color: transparent;
+    }
+    /* Alert */
+
+    [id^="alert-error-"] {
+        position: fixed;
+        width: 300px;
+        height: 200px;
+        bottom: 30px;
+        right: 40px;
+        opacity: 0;
+        z-index: 3;
+        -webkit-transition: all 1s ease 0s;
+        -moz-transition: all 1s ease 0s;
+        -ms-transition: all 1s ease 0s;
+        -o-transition: all 1s ease 0s;
+        transition: all 1s ease 0s;
+    }
+
+    [id^="alert-error-"] div {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    [id^="alert-error-"] div p {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .for-members {
+        padding-top: 70px;
+        background-color: rgb(20, 20, 20);
+        color: rgb(255, 255, 255);
+    }
+
+    .for-members .col-md-3 {
+        margin-top: 120px;
+    }
+
+    .for-members h1 {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+    /* 자유게시판 */
+
+    .head-btn-group {
+        float: right;
+        margin: -72px 10px 0px 0px;
+    }
+
+    .list-table {
+        text-align: center;
+    }
+
+    .list-table>thead>tr.info>th {
+        border-color: rgb(100, 220, 255);
+        background-color: transparent;
+        text-align: center;
+    }
+
+    .list-table>tbody>tr>td {
+        color: rgb(220, 220, 220);
+        background-color: transparent;
+    }
+
+    .list-table>tbody>tr>td a {
+        text-decoration: none;
+        color: rgb(220, 220, 220);
+        background-color: transparent;
+    }
+
+    .list-table>tbody>tr>td a:hover {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background-color: transparent;
+    }
+
+    .post-info,
+    .assignment-info,
+    .resume-info {
+        text-align: right;
+        font-size: 13px;
+    }
+
+    #post-comment {
+        padding: 20px 10px 20px 10px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    #post-comment p {
+        margin: 0px;
+    }
+
+    #post-comment-write {
+        margin-bottom: 30px;
+    }
+
+    #comment-none {
+        font-size: 40px;
+        color: rgb(180, 180, 180);
+        text-align: center;
+    }
+
+    #comment-write-desc {
+        width: 70%;
+        display: inline-block;
+        margin: auto;
+    }
+
+    .post-desc,
+    .assignment-desc,
+    .resume-desc {
+        font-family: "NanumGothic";
+        background-color: transparent;
+        border: 0px;
+        text-align: left;
+        color: rgb(220, 220, 220);
+    }
+
+    .panel>.panel-heading {
+        background-color: rgb(20, 20, 20);
+        color: rgb(100, 220, 255);
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+
+    .panel-danger>.panel-heading {
+        background-color: rgb(20, 20, 20);
+        color: rgb(255, 200, 200);
+    }
+
+    .panel>.panel-body {
+        background-color: rgb(20, 20, 20);
+        color: rgb(220, 220, 220);
+    }
+
+    .pagination>.disabled>a,
+    .pagination>.disabled>a:focus,
+    .pagination>.disabled>a:hover,
+    .pagination>.disabled>span,
+    .pagination>.disabled>span:focus,
+    .pagination>.disabled>span:hover {
+        background-color: rgb(20, 20, 20);
+        color: rgb(100, 100, 100);
+    }
+
+    .pagination>li>a,
+    .pagination>li>a:focus,
+    .pagination>li>a:hover,
+    .pagination>li>span,
+    .pagination>li>span:focus,
+    .pagination>li>span:hover {
+        background-color: rgb(20, 20, 20);
+        color: rgb(180, 180, 180);
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>a:focus,
+    .pagination>.active>a:hover,
+    .pagination>.active>span,
+    .pagination>.active>span:focus,
+    .pagination>.active>span:hover {
+        background-color: rgb(20, 20, 20);
+        border-color: rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
+    }
+    /* 내 정보 */
+
+    #myinfo {
+        margin: 50px 0px 100px 0px;
+        padding: 10px;
+    }
+
+    #myinfo-text {
+        position: absolute;
+        top: 125px;
+        left: 150px;
+    }
+
+    #myinfo-profile-image {
+        float: left;
+        position: relative;
+        width: 100px;
+    }
+
+    #myinfo-change-profile-image {
+        float: left;
+        position: relative;
+        z-index: 1;
+        display: table;
+        top: 0px;
+        left: -100px;
+        height: 100px;
+        width: 100px;
+        padding: 10px;
+        opacity: 0;
+        -webkit-transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -o-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+    }
+
+    #myinfo-change-profile-image:hover {
+        opacity: 1;
+    }
+
+    #myinfo-change-profile-image>div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    #myinfo-change-profile-image input {
+        font-size: 10px;
+        padding: 3px;
+        margin: 2px 0px 2px 0px;
+        height: 25px;
+    }
+    /* 레주메 */
+
+    #resume {
+        background-color: rgb(30, 30, 30);
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    #resume * {
+        font-family: "D2Coding";
+    }
+
+    .resume-none {
+        font-size: 20px;
+        color: rgb(180, 180, 180);
+        margin: auto;
+    }
+
+    .table-resume {
+        text-align: center;
+    }
+
+    .table-resume>tbody>tr>td {
+        vertical-align: middle;
+        padding: 10px;
+    }
+
+    .table-resume>tbody>tr>td li {
+        list-style: none;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .table-resume>tbody>tr>td a {
+        text-decoration: none;
+        color: rgb(220, 220, 220);
+        background-color: transparent;
+    }
+
+    .table-resume>tbody>tr>td a:hover {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        background-color: transparent;
+    }
+    /* Admin */
+
+    .admin h3 {
+        margin-top: 60px;
+    }
